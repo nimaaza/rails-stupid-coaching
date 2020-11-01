@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   def answer
     @question = params[:question]
 
-    @answer = if @question.eql?('I am going to work')
+    @answer = if @question.downcase.eql?('i am going to work')
                 'Great!'
               elsif @question.strip.end_with?('?')
                 'Silly question, get dressed and go to work!'
